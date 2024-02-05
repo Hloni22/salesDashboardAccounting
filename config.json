@@ -1,0 +1,6 @@
+{
+  "CLIENT_ID": "0164CB347D454C988F291141F6ED1B6A",
+  "CLIENT_SECRET": "ITSfaRmCVw_GByWx_RLqLqgxzKgNaWhb1Yt7HeJjQEHRI9OB",
+  "SCOPES": "offline_access accounting.transactions",
+  "REDIRECT_URL": "http://localhost:3000/signin"
+}

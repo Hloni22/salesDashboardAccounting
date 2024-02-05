@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  salesDashboardAccounting
+Transform:
+  - AWS::Serverless-2016-10-31
+Resources:
+  getXeroFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/Xero/getXero.getXero
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Function to initiate Xero OAuth2 flow.
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SampleTable
+      Environment:
+        Variables:
+          SAMPLE_TABLE: !Ref SampleTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /getXero
+            Method: GET
+
+  # getToken:
+  #   Type: AWS::Serverless::Function
+  #   Properties:
+  #     Handler: src/handlers/Xero/getToken.getToken
+  #     Runtime: nodejs18.x
+  #     Architectures:
+  #       - x86_64
+  #     MemorySize: 128
+  #     Timeout: 100
+  #     Description: Function to generate Token.
+  #     Policies:
+  #       - DynamoDBCrudPolicy:
+  #           TableName: !Ref SampleTable
+  #     Environment:
+  #       Variables:
+  #         SAMPLE_TABLE: !Ref SampleTable
+  #     Events:
+  #       Api:
+  #         Type: Api
+  #         Properties:
+  #           Path: /getToken
+  #           Method: GET
+
+  # SampleTable:
+  #   Type: AWS::Serverless::SimpleTable
+  #   Properties:
+  #     PrimaryKey:
+  #       Name: id
+  #       Type: String
+  #     ProvisionedThroughput:
+  #       ReadCapacityUnits: 2
+  #       WriteCapacityUnits: 2
+
+Parameters:
+  ClientIdParameter:
+    Type: String
+  ClientSecretParameter:
+    Type: String
+  RedirectUrlParameter:
+    Type: String
+
+Outputs:
+  WebEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
