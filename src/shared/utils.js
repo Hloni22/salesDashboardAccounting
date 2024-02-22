@@ -1,4 +1,7 @@
 'use strict';
+const { Issuer, Strategy, custom } = require('openid-client');
+
+let inMemoryToken = null;
 // const express = require('express');
 // const session = require('express-session');
 const request = require('request');
@@ -18,15 +21,28 @@ const setupXeroOAuth2 = async (clientId, clientSecret, redirectUri, xeroApiUrl, 
 };
 
 
-const getToken = async (client, redirectUrl, query, req, res, ret) => {
+
+
+const requestToken = async (client, redirectUrl, query, req, res, data) => {
     try {
+        console.log('Client OBJ : ', client);
+        const issuer = await Issuer.discover('https://identity.xero.com/.well-known/openid-configuration');
+        client = new issuer.Client({
+            client_id: process.env.CLIENT_ID,
+            client_secret: process.env.CLIENT_SECRET,
+            redirect_uris: [process.env.REDIRECT_URI],
+            response_types: ['code'],
+            grant_types: ['authorization_code'],
+            token_endpoint_auth_method: 'client_secret_post',
+            scope: 'openid profile email accounting.transactions accounting.settings offline_access',
+        });
         client.CLOCK_TOLERANCE = 5;
         Issuer.defaultHttpOptions = { timeout: 20000 };
 
-        const token = await client.authorizationCallback(redirectUrl, ret);
+        const token = await client.authorizationCallback(redirectUrl, data);
         inMemoryToken = token;
         let accessToken = token.access_token;
-        ret.session.accessToken = accessToken;
+        req.session.accessToken = accessToken;
         console.log('\nOAuth successful...\n\naccess token: \n' + accessToken + '\n');
         let idToken = token.id_token;
         console.log('\id token: \n' + idToken + '\n');
@@ -129,7 +145,7 @@ const refreshToken = async () => {
 
 module.exports = {
     setupXeroOAuth2,
-    handleCallback,
+    requestToken,
     getOrganisation,
     getInvoices,
     refreshToken,

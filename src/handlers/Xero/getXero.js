@@ -1,5 +1,6 @@
 const axios = require('axios');
 const jwt = require('jsonwebtoken');
+
 // const { setupXeroOAuth2, handleCallback, getInvoices } = require('./shared/utils.js');
 // const express = require('express');
 // const session = require('express-session');
@@ -12,10 +13,9 @@ const utils = require('../../shared/utils.js')
 exports.getXero = async (event) => {
   try {
     const issuer = await Issuer.discover('https://identity.xero.com');
-
-    const clientId = "0CB7D89398F14A079C594A80FCDF86FF";
-    const clientSecret = "nonH9mUi8NScYIv9N5-SemZ2knf6AYefC0AmRiJJxjhEvd_k";
-    const redirectUri = "http://localhost:7062/api/getxerotoken";
+    const clientId = "80124FA57C9743FC888331D9F01123D1";
+    const clientSecret = "QFU-kVh-I0o-hKXe4aJB0B3pc0239eKWeSF6kowzUNi-2CbG";
+    const redirectUri = "http://localhost:7062/api/xero/getToken";
     const xeroApiUrl = 'https://api.xero.com';
     const scopes = "offline_access accounting.transactions";
 

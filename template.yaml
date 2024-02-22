@@ -27,28 +27,28 @@ Resources:
             Path: /getXero
             Method: GET
 
-  # getToken:
-  #   Type: AWS::Serverless::Function
-  #   Properties:
-  #     Handler: src/handlers/Xero/getToken.getToken
-  #     Runtime: nodejs18.x
-  #     Architectures:
-  #       - x86_64
-  #     MemorySize: 128
-  #     Timeout: 100
-  #     Description: Function to generate Token.
-  #     Policies:
-  #       - DynamoDBCrudPolicy:
-  #           TableName: !Ref SampleTable
-  #     Environment:
-  #       Variables:
-  #         SAMPLE_TABLE: !Ref SampleTable
-  #     Events:
-  #       Api:
-  #         Type: Api
-  #         Properties:
-  #           Path: /getToken
-  #           Method: GET
+  getToken:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/Xero/getToken.getToken
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: Function to generate Token.
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SampleTable
+      Environment:
+        Variables:
+          SAMPLE_TABLE: !Ref SampleTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /getToken
+            Method: POST
 
   # SampleTable:
   #   Type: AWS::Serverless::SimpleTable

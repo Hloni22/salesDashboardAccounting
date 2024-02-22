@@ -1,27 +1,37 @@
-START RequestId: 732c8dfe-619f-4399-8ac2-6994ca1227ce Version: $LATEST
-2024-02-05T08:08:53.274Z	undefined	ERROR	Uncaught Exception 	{"errorType":"ReferenceError","errorMessage":"handleCallback is not defined","stack":["ReferenceError: handleCallback is not defined","    at Object.<anonymous> (/var/task/src/shared/utils.js:132:5)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)","    at Module.load (node:internal/modules/cjs/loader:1197:32)","    at Module._load (node:internal/modules/cjs/loader:1013:12)","    at Module.require (node:internal/modules/cjs/loader:1225:19)","    at require (node:internal/modules/helpers:177:18)","    at Object.<anonymous> (/var/task/src/handlers/Xero/getXero.js:8:15)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)"]}
-05 Feb 2024 08:08:53,297 [ERROR] (rapid) Init failed error=Runtime exited with error: exit status 129 InvokeID=
-05 Feb 2024 08:08:53,301 [ERROR] (rapid) Invoke failed error=Runtime exited with error: exit status 129 InvokeID=10aba386-f65a-402f-855b-bd709066f725
-05 Feb 2024 08:08:53,301 [ERROR] (rapid) Invoke DONE failed: Sandbox.Failure
+START RequestId: 90a4f9d5-6a01-4fa0-a688-709f798e2ff2 Version: $LATEST
+2024-02-06T07:02:02.467Z	undefined	ERROR	Uncaught Exception 	{"errorType":"Runtime.UserCodeSyntaxError","errorMessage":"SyntaxError: Identifier 'request' has already been declared","stack":["Runtime.UserCodeSyntaxError: SyntaxError: Identifier 'request' has already been declared","    at _loadUserApp (file:///var/runtime/index.mjs:1084:17)","    at async UserFunction.js.module.exports.load (file:///var/runtime/index.mjs:1119:21)","    at async start (file:///var/runtime/index.mjs:1282:23)","    at async file:///var/runtime/index.mjs:1288:1"]}
+06 Feb 2024 07:02:02,478 [ERROR] (rapid) Init failed error=Runtime exited with error: exit status 129 InvokeID=
+06 Feb 2024 07:02:02,479 [ERROR] (rapid) Invoke failed error=Runtime exited with error: exit status 129 InvokeID=7a40cdce-43d5-495f-b76b-3b1258a411e0
+06 Feb 2024 07:02:02,479 [ERROR] (rapid) Invoke DONE failed: Sandbox.Failure
 
-START RequestId: 75646cf0-c1c0-4428-ac26-78fcc30f2a65 Version: $LATEST
-2024-02-05T08:09:10.626Z	undefined	ERROR	Uncaught Exception 	{"errorType":"ReferenceError","errorMessage":"handleCallback is not defined","stack":["ReferenceError: handleCallback is not defined","    at Object.<anonymous> (/var/task/src/shared/utils.js:132:5)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)","    at Module.load (node:internal/modules/cjs/loader:1197:32)","    at Module._load (node:internal/modules/cjs/loader:1013:12)","    at Module.require (node:internal/modules/cjs/loader:1225:19)","    at require (node:internal/modules/helpers:177:18)","    at Object.<anonymous> (/var/task/src/handlers/Xero/getXero.js:8:15)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)"]}
-05 Feb 2024 08:09:10,649 [ERROR] (rapid) Invoke failed error=Runtime exited with error: exit status 129 InvokeID=9a23d834-582a-4798-87ad-03e2eb0e1e17
-05 Feb 2024 08:09:10,649 [ERROR] (rapid) Invoke DONE failed: Runtime.ExitError
+START RequestId: 334ab945-52e1-41fa-9d64-24054ed52612 Version: $LATEST
+2024-02-06T07:03:36.295Z	cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5	INFO	Start setUp
+2024-02-06T07:03:36.296Z	cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5	INFO	Starting
+2024-02-06T07:03:36.296Z	cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5	INFO	Setting up OAuth2 client access!!!!!!
+2024-02-06T07:03:36.298Z	cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5	INFO	End setUp
+2024-02-06T07:03:36.298Z	cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5	INFO	Oauth Res https://login.xero.com/identity/connect/authorize?client_id=80124FA57C9743FC888331D9F01123D1&scope=offline_access%20accounting.transactions&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A7062%2Fapi%2Fxero%2FgetToken
+END RequestId: cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5
+REPORT RequestId: cc2d53e8-f1cd-4e77-9736-14e0c6f8d6c5	Init Duration: 0.03 ms	Duration: 5122.16 ms	Billed Duration: 5123 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
 
-START RequestId: 8a4de0ce-c2fe-4ed0-a16b-189037764bc9 Version: $LATEST
-2024-02-05T08:11:17.827Z	undefined	ERROR	Uncaught Exception 	{"errorType":"ReferenceError","errorMessage":"handleCallback is not defined","stack":["ReferenceError: handleCallback is not defined","    at Object.<anonymous> (/var/task/src/shared/utils.js:132:5)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)","    at Module.load (node:internal/modules/cjs/loader:1197:32)","    at Module._load (node:internal/modules/cjs/loader:1013:12)","    at Module.require (node:internal/modules/cjs/loader:1225:19)","    at require (node:internal/modules/helpers:177:18)","    at Object.<anonymous> (/var/task/src/handlers/Xero/getXero.js:8:15)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)"]}
-05 Feb 2024 08:11:17,848 [ERROR] (rapid) Invoke failed InvokeID=3af357e9-3c40-4793-87e0-d7c837391248 error=Runtime exited with error: exit status 129
-05 Feb 2024 08:11:17,848 [ERROR] (rapid) Invoke DONE failed: Runtime.ExitError
+START RequestId: c328e8eb-f7be-4e82-bbec-d66595cb9005 Version: $LATEST
+2024-02-06T07:03:54.682Z	c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	INFO	Req Query :   {
+  code: 'Atm1sNFomlrkkcr8bTHk5uHkM7bnQIGbxYgWLYcwPBc',
+  scope: 'accounting.transactions offline_access'
+}
+2024-02-06T07:03:54.775Z	c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	INFO	Start setUp
+2024-02-06T07:03:54.776Z	c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	INFO	Client OBJ :  80124FA57C9743FC888331D9F01123D1
+2024-02-06T07:03:54.825Z	c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	INFO	ERROR: TypeError: client_id is required
+2024-02-06T07:03:54.825Z	c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	INFO	End setUp
+2024-02-06T07:03:54.825Z	c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	INFO	Oauth Error
+END RequestId: c6d06c32-29b2-4a21-8f2b-dbfe4d48c752
+REPORT RequestId: c6d06c32-29b2-4a21-8f2b-dbfe4d48c752	Init Duration: 0.04 ms	Duration: 6231.43 ms	Billed Duration: 6232 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
 
-START RequestId: 704bbef1-f390-4068-ad9e-08af27046171 Version: $LATEST
-2024-02-05T08:22:17.529Z	undefined	ERROR	Uncaught Exception 	{"errorType":"ReferenceError","errorMessage":"handleCallback is not defined","stack":["ReferenceError: handleCallback is not defined","    at Object.<anonymous> (/var/task/src/shared/utils.js:132:5)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)","    at Module.load (node:internal/modules/cjs/loader:1197:32)","    at Module._load (node:internal/modules/cjs/loader:1013:12)","    at Module.require (node:internal/modules/cjs/loader:1225:19)","    at require (node:internal/modules/helpers:177:18)","    at Object.<anonymous> (/var/task/src/handlers/Xero/getXero.js:8:15)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)"]}
-05 Feb 2024 08:22:17,552 [ERROR] (rapid) Init failed InvokeID= error=Runtime exited with error: exit status 129
-05 Feb 2024 08:22:17,552 [ERROR] (rapid) Invoke failed error=Runtime exited with error: exit status 129 InvokeID=9dabc9e8-d8d2-42f7-a565-051fde7a8587
-05 Feb 2024 08:22:17,552 [ERROR] (rapid) Invoke DONE failed: Sandbox.Failure
-
-START RequestId: 3caefa59-b0dd-4676-8f93-a4fc81b0621b Version: $LATEST
-2024-02-05T08:29:15.418Z	undefined	ERROR	Uncaught Exception 	{"errorType":"ReferenceError","errorMessage":"handleCallback is not defined","stack":["ReferenceError: handleCallback is not defined","    at Object.<anonymous> (/var/task/src/shared/utils.js:132:5)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)","    at Module.load (node:internal/modules/cjs/loader:1197:32)","    at Module._load (node:internal/modules/cjs/loader:1013:12)","    at Module.require (node:internal/modules/cjs/loader:1225:19)","    at require (node:internal/modules/helpers:177:18)","    at Object.<anonymous> (/var/task/src/handlers/Xero/getXero.js:8:15)","    at Module._compile (node:internal/modules/cjs/loader:1356:14)","    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)"]}
-05 Feb 2024 08:29:15,439 [ERROR] (rapid) Invoke failed InvokeID=3b5c9cb2-68d1-473c-82a1-bec39f3d794b error=Runtime exited with error: exit status 129
-05 Feb 2024 08:29:15,439 [ERROR] (rapid) Invoke DONE failed: Runtime.ExitError
+START RequestId: 6d47addf-2834-48ee-9586-19bd5b8f9c44 Version: $LATEST
+2024-02-06T08:32:49.860Z	e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6	INFO	Start setUp
+2024-02-06T08:32:49.861Z	e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6	INFO	Starting
+2024-02-06T08:32:49.861Z	e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6	INFO	Setting up OAuth2 client access!!!!!!
+2024-02-06T08:32:49.862Z	e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6	INFO	End setUp
+2024-02-06T08:32:49.862Z	e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6	INFO	Oauth Res https://login.xero.com/identity/connect/authorize?client_id=80124FA57C9743FC888331D9F01123D1&scope=offline_access%20accounting.transactions&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A7062%2Fapi%2Fxero%2FgetToken
+END RequestId: e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6
+REPORT RequestId: e12041c0-d7b2-4de8-b3e3-8efe4c04f3b6	Init Duration: 0.17 ms	Duration: 5786.35 ms	Billed Duration: 5787 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
 
